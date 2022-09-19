@@ -71,7 +71,7 @@ app.get('/games/:id/ads', async (request, response) => {
     },
   });
 
-  return response.json([
+  return response.json(
     ads.map((ad) => {
       return {
         ...ad,
@@ -79,8 +79,8 @@ app.get('/games/:id/ads', async (request, response) => {
         hourStart: ConvertMinutesToHourString(ad.hourStart),
         hourEnd: ConvertMinutesToHourString(ad.hourEnd),
       };
-    }),
-  ]);
+    })
+  );
 });
 
 app.get('/ads/:id/discord', async (request, response) => {
